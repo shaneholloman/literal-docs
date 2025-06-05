@@ -1,0 +1,87 @@
+---
+title: Migration Guide
+icon: arrow-right-arrow-left
+---
+
+<Note>
+**Important Notice:** Literal AI will be discontinued, with the service remaining available until **October 31st, 2025**. This guide will help you migrate to alternative solutions.
+</Note>
+
+## Context
+
+Chainlit is a great tool for building internal and external AI chatbots and copilots. We're very thankful for the community that has built on top of it.
+
+In 2024, we also built Literal AI, an LLMOps product. Both products achieved notable milestones:
+- **Chainlit**: Used by Stability AI, Microsoft, Nvidia and many others
+- **Literal AI**: Adopted by various companies for LLM observability
+
+However, despite enabling great AI projects, we weren't able to differentiate enough in these competitive markets to build sustainable revenue.
+
+### What's Changing
+
+After careful consideration, we've made the difficult decision to discontinue Literal AI (service remains available until October 31st, 2025) and are actively seeking a [new maintainer](https://docs.google.com/forms/d/e/1FAIpQLSf6CllNWnKBnDIoj0m-DnHU6b0dj8HYFGixKy-_qNi_rD4iNA/viewform) to take over Chainlit. These decisions are not taken lightly, but we believe it's the best way to move forward. While this marks the end of our direct involvement with these products, we're excited about what comes next.
+
+## Migration Options
+
+We understand this transition may be challenging, so we've prepared several migration paths to help you continue your LLM operations seamlessly.
+
+### Options: 
+- [LangSmith](https://docs.smith.langchain.com/): LangSmith by LangChain is a comprehensive LLMOps platform that offers robust observability, evaluation, and monitoring capabilities.
+- [LangFuse](https://www.langfuse.com/): LangFuse is an open-source LLM engineering platform that provides observability, analytics, and experimentation capabilities.
+- Open Source [Data Layer](https://github.com/chainlit/chainlit-datalayer) (Self-Hosted): For users who want only want a data layer and don't need observability or evaluation capabilities.
+
+## Migration Plan
+
+<Steps>
+  <Step title="Export Your Data">
+    Export all your data from Literal AI using our [Export Data](/more/export-data) functionality. This includes datasets, experiments, prompts.
+  </Step>
+  <Step title="Choose an alternative and upload your datasets">
+    - Once you have exported your data, you can choose an alternative and upload your assets.
+    - Update your application logging mechanism to point to the new solution you chose.
+  </Step>
+</Steps>
+
+<Note>
+  Choose an alternative that supports OpenTelemetry. Most AI frameworks now support OpenTelemetry-based observability and most LLMOps platforms should support it.
+</Note>
+
+
+## Data Export Before Migration
+
+Before migrating to any alternative platform, make sure to export all your data from Literal AI. This includes:
+
+- **Threads and Messages**: All conversation data and context
+- **Generations**: LLM completions and their metadata
+- **Datasets**: Evaluation datasets and test cases
+- **Prompt Templates**: All saved prompts and their versions
+- **Evaluation Results**: Scorer outputs and experiment results
+
+Refer to our [Export Data guide](/more/export-data) for detailed instructions on how to extract your data programmatically.
+
+## Support During Migration
+
+While we're winding down Literal AI, we're committed to helping you through this transition:
+
+- **Documentation**: All migration resources will remain available
+- **Export Assistance**: Technical support for data export until service discontinuation
+
+## Frequently Asked Questions
+
+<AccordionGroup>
+  <Accordion title="When exactly will Literal AI stop working?">
+    Literal AI will remain fully operational until **October 31st 2025**. You have ample time to plan and execute your migration.
+  </Accordion>
+  
+  <Accordion title="Will I lose my data if I don't migrate?">
+    Yes, all data will be permanently deleted when the service is discontinued. Please ensure you export all important data before October 31st 2025.
+  </Accordion>
+  
+  <Accordion title="What happens to Chainlit?">
+    We're actively seeking a new maintainer for Chainlit. The project will continue under new leadership to serve the community.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+We apologize for any inconvenience this transition may cause and appreciate your understanding. The LLMOps ecosystem has grown significantly, and these alternative solutions will serve you well as you continue building amazing AI applications. 

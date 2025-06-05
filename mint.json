@@ -45,6 +45,12 @@
   ],
   "navigation": [
     {
+      "group": "Important Notice",
+      "pages": [
+        "more/migration-guide"
+      ]
+    },
+    {
       "group": "Get Started",
       "pages": [
         "get-started/overview",
